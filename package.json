@@ -1,0 +1,11 @@
+{
+  "name": "tech-trends-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "twitter-api-v2": "^1.15.2",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5"
+  }
+}
