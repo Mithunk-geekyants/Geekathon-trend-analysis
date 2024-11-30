@@ -1,24 +1,23 @@
-require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
-const trendsRoutes = require('./src/routes/trends.routes');
-
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // Middleware
-app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use('/api', trendsRoutes);
+// Import Routes
+const googleTrendsRoutes = require('./src/routes/google-api');
+const rssFeedsRoutes = require('./src/routes/rss-feeds-api');
+const twitterTrendsRoutes = require('./src/routes/twitter-api');
+const redditTrendsRoutes = require('./src/routes/reddit-api');
 
-// Basic route for testing
-app.get('/', (req, res) => {
-    res.json({ message: 'Tech Trends Scraper API is running' });
-});
+// Use Routes
+app.use('/api/google-trends', googleTrendsRoutes);
+app.use('/api/rss-trends', rssFeedsRoutes);
+app.use('/api/twitter-trends', twitterTrendsRoutes);
+app.use('/api/reddit-trends', redditTrendsRoutes);
 
-// Start server
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-}); 
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
