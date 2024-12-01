@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
     };
 
     // Save to a JSON file
-    fs.writeFileSync('data/trends.json', JSON.stringify(combinedData, null, 2)); 
+    fs.writeFileSync('./data/trends.json', JSON.stringify(combinedData, null, 2)); 
     console.log('Data saved!');
 
     // Send a response back to the client

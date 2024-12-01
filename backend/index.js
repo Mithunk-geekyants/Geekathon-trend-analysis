@@ -12,7 +12,7 @@ const rssFeedsRoutes = require('./src/routes/rss-feeds-api');
 const twitterTrendsRoutes = require('./src/routes/twitter-api');
 const redditTrendsRoutes = require('./src/routes/reddit-api');
 const trendsRouter = require('./src/routes/trends');
-const fetchDataRouter = require('./src/routes/fetchData');
+const fetchDataRouter = require('./src/routes/fetchdata');
 
 // Use Routes
 app.use('/api/google-trends', googleTrendsRoutes);

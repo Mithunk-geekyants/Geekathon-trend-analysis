@@ -65,7 +65,7 @@ router.get('/', async (req, res) => {
         res.json({ 
             success: true, 
             timestamp: new Date().toISOString(),
-            articles: finalArticles 
+            posts: finalArticles 
         });
     } catch (error) {
         console.error('Error fetching Tech RSS feeds:', error.message);
